@@ -3,8 +3,8 @@
 #### 介绍
 简单的控制台交互程序，可以使用自己搭建的cnn网络，或vgg网络进行训练和测试
 识别对象：由captcha生成的验证码，大小写字母以及数字，5位长度，识别率达到98以上，下图是数据集示例
-![Uploading QQ截图20230727164749.jpg…]()
 
+![image](https://github.com/gitover22/captcha_recognition/assets/83172922/8eb749cc-ec1c-47b2-b100-9d7ae022a033)
 
 #### 软件架构
   使用pytorch框架,可使用gpu加速。数据集是captcha提供生成
