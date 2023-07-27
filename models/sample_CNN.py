@@ -4,17 +4,13 @@ from torch.utils.tensorboard import SummaryWriter
 
 from tools import captcha_info
 
-# CNN Version 2.0   have 灰度
+
 class my_CNN(nn.Module):
-    """
-    该模型的结构：
-    输入（图像） -> 卷积层1 -> 卷积层2 -> 卷积层3 -> 全连接层1 -> Dropout层 -> 全连接层2 -> 输出（预测结果）
-    """
 
     def __init__(self):
         super(my_CNN, self).__init__()
-        # 定义第一个卷积神经网络层
-        self.layers = nn.Sequential(
+        # 层级序列
+        self.layers1 = nn.Sequential(
             nn.Conv2d(1, 32, kernel_size=3, padding=1),  # 第一层 输入通道数为1，输出通道数为32，卷积核大小为3，padding大小为1,stride为1
             nn.BatchNorm2d(32),  # 批量归一化层
             # nn.Dropout(0.5),  # 以0.5的概率随机丢弃神经元，防止过拟合
@@ -37,22 +33,38 @@ class my_CNN(nn.Module):
             nn.ReLU(),
             nn.MaxPool2d(2)  # 第八层
         )
-        # 第一个全连接层
-        self.fc = nn.Sequential(
-            nn.Linear(128 * 7 * 20, 1024),  # 输入层有7*20*128个神经元，输出层有1024个神经元
+        # 全连接层
+        self.layers2 = nn.Sequential(
+            nn.Linear(128 * 10 * 25, 1024),  # 输入层有7*20*128个神经元，输出层有1024个神经元
             nn.ReLU(),
             nn.Dropout(0.5)  # 使用dropout技术，防止过拟合
         )
-        # 第二个全连接层
-        self.rfc = nn.Sequential(
-            # 输入层有1024个神经元，输出层有4*36个神经元
+        # 全连接层
+        self.layers3 = nn.Sequential(
+            # 输入层有1024个神经元，输出层有5*62个神经元
             nn.Linear(1024, captcha_info.Captcha_Len * captcha_info.Len_of_charset),
         )
 
     # 前向传播函数
-    def forward(self, x):
-        out = self.layers(x)
-        out = out.view(out.size(0), -1)  # 将输出展开成一维向量
-        out = self.fc(out)
-        out = self.rfc(out)
+    def forward(self, input):
+        out = self.layers1(input)
+        out = out.view(out.size(0), -1)  # 展开
+        out = self.layers2(out)
+        out = self.layers3(out)
         return out
+
+
+if __name__ == "__main__":
+    my_model = my_CNN()
+    # print(my_model)
+    # 利用torch产生输入数据 ，BCHW
+    input = torch.ones((64, 1, 80, 200))
+    out = my_model(input)
+
+    # 可视化操作
+    writer = SummaryWriter("./logs")
+    writer.add_graph(my_model, input)
+    writer.close()
+    print(out.shape)
+    torch.set_printoptions(edgeitems=100000, threshold=100000)
+    print(out)

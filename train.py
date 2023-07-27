@@ -3,18 +3,10 @@
 import argparse
 import time
 from tools.my_dataset import *
-from models.sample_CNN import *
 from tools.my_dataset import Get_train_Dataloader
-import tqdm
 from test import *
 from torch.autograd import Variable
-
-'''
-captcha_train.py用于训练模型,模型会被保存在model_CNN.pkl文件中
-作者：邹国强
-'''
-
-
+from models.vgg import *
 def parse_option():
     """
     tool function
@@ -45,10 +37,10 @@ def count_img_nums():
     # print("参与本次训练的图片共有%d张" % count)
 
 
-def train_and_test():
+def train_model(model_creater,saved_name):
     # 初始化一个CNN网络模型
-    model = my_CNN()
-    print("正常加载CNN网络模型")
+    model = model_creater()
+    print("正常加载网络模型")
 
     # 检查是否有可用的CUDA
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
@@ -81,26 +73,27 @@ def train_and_test():
             loss.backward()
             optimizer.step()
 
-        torch.save(model.state_dict(), "saved_model/test_model.pkl")
+        torch.save(model.state_dict(), "saved_model/"+saved_name+".pkl")
         print("epoch:{}    trainloss:{}".format((epoch + 1), loss))
         time.sleep(2)
 
-        # 计算模型在测试集上的准确率和损失值
-        accuracy, loss2 = test_acc()
-
-        # 自定义阈值
-        theta = 0.96
-        if accuracy > theta:
-            break
-
     # 再次保存模型参数
-    torch.save(model.state_dict(), "saved_model/test_model.pkl")
+    torch.save(model.state_dict(),  "saved_model/"+saved_name+".pkl")
     print("------------------------------训练测试完成，模型已存储------------------------------")
 
 
 if __name__ == '__main__':
-    # 参与训练的图片数
-    count_img_nums()
-    # 记录开始时间
-    train_and_test()
-
+    file_name = input("请输入存储本次训练模型的文件名：(like:cnn_model)")
+    model_names = {
+        "my_CNN": my_CNN,
+        "vgg11": vgg11,
+        "vgg13": vgg13,
+        "vgg16": vgg16,
+        "vgg19": vgg19
+    }
+    model_name = input("请选择您要训练的模型(可选择：my_CNN,vgg11，vgg13，vgg16，vgg19)：")
+    if model_name in model_names:
+        selected_model = model_names[model_name]
+        train_model(selected_model,file_name)
+    else:
+        print("选择的模型名称无效，请重新运行并输入正确的模型名称。")

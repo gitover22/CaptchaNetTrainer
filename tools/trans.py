@@ -51,7 +51,7 @@ def decode(vec):
     char_pos = vec.nonzero()[0]
     text = []
     for i, c in enumerate(char_pos):
-        print("i: %d   c: %d"%(i,c))
+        # print("i: %d   c: %d"%(i,c))
         char_idx = c % captcha_info.Len_of_charset
         if char_idx < 10:
             char_code = char_idx + ord('0')
