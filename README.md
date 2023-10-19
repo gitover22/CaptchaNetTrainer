@@ -1,22 +1,23 @@
-# 验证码识别项目
+# Captchas identify items
 
-#### 介绍
-简单的控制台交互程序，可以使用自己搭建的cnn网络，或vgg网络进行训练和测试
-识别对象：由captcha生成的验证码，大小写字母以及数字，5位长度，识别率达到98以上，下图是数据集示例
+## Introduction
+Simple console interactive program, you can use your own built cnn network, or vgg network for training and testing.
+Identification object: captcha generated verification code, upper and lower case letters and numbers, 5 digits in length, 
+the recognition rate reached more than 98, the following figure is the dataset example.
 
 ![image](https://github.com/gitover22/captcha_recognition/assets/83172922/8eb749cc-ec1c-47b2-b100-9d7ae022a033)
 
-#### 软件架构
-  使用pytorch框架,可使用gpu加速。数据集是captcha提供生成
+## something you need know
+This project uses pytorch framework with gpu acceleration. The dataset is captcha provided to generate.
 
 
-#### 安装教程
-1.  clone项目；
-2.  安装所需软件包，如torch，tqdm等；
-3.  训练，测试模型。
+## how to run
+- Clone this pro.
+- Install the required packages.
+- Train and test the model.
 
 
-#### 使用说明
-1.  控制台交互，可以选择vgg11，13，16，19等；
-2.  数据集复杂程度高，含有噪点，曲线等干扰信息；
-3.  项目尚不完善，有多个优化方向。
+## a few words
+- Console interaction, you can choose vgg11, 13,16,19, etc.
+- The dataset has high complexity and contains noise, curve and other interference information.
+- The project is not yet complete and there are multiple directions for optimization.
