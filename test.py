@@ -7,7 +7,6 @@ from torch.autograd import Variable
 from tools import captcha_info
 from models.vgg import *
 def test_acc(model_select,model_name):
-    # 创建CNN模型并加载保存的模型
     model = model_select()
     model.eval()
     model.load_state_dict(torch.load("saved_model/"+model_name+".pkl"))
