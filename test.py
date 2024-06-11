@@ -1,4 +1,3 @@
-# 实现神经网络的测试
 from models.sample_CNN import *
 from tools import trans
 from tools.my_dataset import Get_test_Dataloader
