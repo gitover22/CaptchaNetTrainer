@@ -62,7 +62,7 @@ def test_acc(model_select,model_name):
 if __name__ == '__main__':
     file_name = input("Please enter the name of the model you want to test (like:cnn_model):")
     model_names = {
-        "my_CNN": my_CNN,
+        "diyCNN": my_CNN,
         "vgg11": vgg11,
         "vgg13": vgg13,
         "vgg16": vgg16,
@@ -73,7 +73,8 @@ if __name__ == '__main__':
         "resnet101": resnet101,
         "resnet152": resnet152,
     }
-    model_name = input("Select the type of model you want to test(like:my_CNN,vgg11, vgg13, vgg16, vgg19):")
+    model_name = input("Select the type of model you want to train(pools: diyCNN,vggN,resnetN):")
+
     if model_name in model_names:
         selected_model = model_names[model_name]
         test_acc(selected_model, file_name)

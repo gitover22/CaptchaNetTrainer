@@ -38,7 +38,7 @@ def resnet34():
     return ModifiedResNet(base_model, Len_of_charset*Captcha_Len)
 
 def resnet50():
-    base_model = torchvision.models.resnetCaptcha_Len0(weights=None)
+    base_model = torchvision.models.resnet50(weights=None)
     return ModifiedResNet(base_model, Len_of_charset*Captcha_Len)
 
 def resnet101():
@@ -46,7 +46,7 @@ def resnet101():
     return ModifiedResNet(base_model, Len_of_charset*Captcha_Len)
 
 def resnet152():
-    base_model = torchvision.models.resnet1Captcha_Len2(weights=None)
+    base_model = torchvision.models.resnet152(weights=None)
     return ModifiedResNet(base_model, Len_of_charset*Captcha_Len)
 
 if __name__ == '__main__':

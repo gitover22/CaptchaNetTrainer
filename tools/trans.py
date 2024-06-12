@@ -1,11 +1,12 @@
 import numpy as np
 from tools import captcha_info
+# import captcha_info
 
 def encode(text):
     """
     transfer text to vector
     @param text: string text, such as:"9BK7H"
-    @return: a tensor of 5*(10+26+26) length
+    @return: a tensor of 4*(10+26+26) length
     """
     # define a captcha_info.ALL_CHAR_SET_LEN * captcha_info.MAX_CAPTCHA zero vector
     vector = np.zeros(captcha_info.Captcha_Len * captcha_info.Len_of_charset, dtype=float)
@@ -57,10 +58,10 @@ def decode(vec):
 
 # test
 if __name__ == '__main__':
-    e = encode("6BK7H")
+    e = encode("6BK7")
     print(type(e))
     print(e)
-    print(decode(e))
+    # print(decode(e))
     # for i in range(10):
     #     print(e)
     # print(e)
