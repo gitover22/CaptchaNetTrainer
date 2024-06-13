@@ -4,13 +4,13 @@
 This framework is designed for deep learning beginners, can be used to experience the training process of neural networks, experience tuning optimization, is very easy to deploy, and can run on your personal computer in a short time.
 
 ## overview
-![voerview](resource/overview.png)
+![voerview](./resource/overview.png)
 
 ## dataset
-![dataset](resource/datasets.png)
+![dataset](./resource/datasets.png)
 
 ## test
-![test params](resource/params.png)
+![test params](./resource/params.png)
 
 The pure numeric CAPTCHA, pure uppercase letter CAPTCHA and alphanuloid mixed CAPTCHA are tested, and resnet50 in the model pool is used for testing, and the accuracy is 99.7%,,
 
