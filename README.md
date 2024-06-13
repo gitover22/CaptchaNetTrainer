@@ -7,7 +7,7 @@ This framework is designed for deep learning beginners, can be used to experienc
 ![voerview](./resource/overview.png)
 
 ## dataset
-![dataset](./resource/datasets.png)
+![dataset](https://github.com/gitover22/captcha_recognition/blob/master/resource/datasets.png)
 
 ## test
 ![test params](./resource/params.png)
