@@ -14,7 +14,7 @@ def parse_option():
     Command line argument parser
     """
     parser = argparse.ArgumentParser('Arguments for training')
-    parser.add_argument('--epochs', type=int, default=25, help='')
+    parser.add_argument('--epochs', type=int, default=20, help='')
     parser.add_argument('--batch_size', type=int, default=256, help='')
     parser.add_argument('--learning_rate', type=float, default=0.001, help='')
     opt = parser.parse_args()
