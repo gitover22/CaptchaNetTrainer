@@ -12,7 +12,7 @@ This framework is designed for deep learning beginners, can be used to experienc
 ## test
 ![test params](./resource/params.png)
 
-The pure numeric CAPTCHA, pure uppercase letter CAPTCHA and alphanuloid mixed CAPTCHA are tested, and resnet50 in the model pool is used for testing, and the accuracy is 99.7%,,
+The pure numeric CAPTCHA, pure uppercase letter CAPTCHA and alphanuloid mixed CAPTCHA are tested, and resnet50 in the model pool is used for testing, and the accuracy is 99.7%,99.3%,96.5%
 
 ## some tips
 - Supports cpu/gpu

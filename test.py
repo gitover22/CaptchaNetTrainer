@@ -51,7 +51,7 @@ def test_acc(model_select,model_name):
         predict_label = '%s%s%s%s' % (c0, c1, c2, c3)
         true_label = trans.decode(labels.cpu().numpy()[0])
         total += labels.size(0)
-        print("predict: %s   true: %s\n"%(predict_label,true_label))
+        # print("predict: %s   true: %s\n"%(predict_label,true_label))
         if predict_label == true_label:
             correct += 1
 
