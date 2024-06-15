@@ -8,6 +8,7 @@ This framework is designed for deep learning beginners, can be used to experienc
 
 ## dataset
 ![dataset](./resource/datasets.png)
+dataset generator can generate arbitrary datasets by Captcha package.
 
 ## test
 ![test params](./resource/params.png)
@@ -15,15 +16,16 @@ This framework is designed for deep learning beginners, can be used to experienc
 The pure numeric CAPTCHA, pure uppercase letter CAPTCHA and alphanuloid mixed CAPTCHA are tested, and resnet50 in the model pool is used for testing, and the accuracy is 99.7%,99.3%,96.5%
 
 ## some tips
-- Supports cpu/gpu
-- pytorch framework
-- easy deploy on PC
+- Supports cpu/gpu.
+- pytorch framework.
+- easy deploy on your python env.
 
 
 ## how to run
 - git clone or download zip.
 - Install the required packages.
 - modify parameters for your model or add model.
+- Use dataset generator to generate the dataset.
 - Train and test the model.
 
 
