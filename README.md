@@ -1,7 +1,7 @@
 # A CNN training framework for captcha recognition.
 
 ## introduction
-This framework is designed for deep learning beginners, can be used to experience the training process of neural networks, experience tuning optimization, is very easy to deploy, and can run on your personal computer in a short time.
+this framework is designed for deep learning beginners, can be used to experience the training process of neural networks, experience tuning optimization, is very easy to deploy, and can run on your personal computer in a short time.
 
 ## overview
 ![voerview](./resource/overview.png)
