@@ -26,10 +26,10 @@ The pure numeric CAPTCHA, pure uppercase letter CAPTCHA and alphanuloid mixed CA
 
 ## how to run
 - git clone or download zip.
-- Install the required packages.
+- install the required packages.
 - modify parameters for your model or add model.
-- Use dataset generator to generate the dataset.
-- Train and test the model.
+- use dataset generator to generate the dataset.
+- train and test the model.
 
 ## todo list
 - implement a client using PyQt, which makes it easy for users to change parameters and so on.
@@ -38,6 +38,6 @@ The pure numeric CAPTCHA, pure uppercase letter CAPTCHA and alphanuloid mixed CA
 - add a visualization module allows users to visualize the parameters using visualization tools, etc.
 
 ## attention
-- Console interaction, you can choose diyCNN,ResNet etc.
-- The dataset has high complexity and contains noise, curve and other interference information.
-- The project is not yet complete and there are multiple directions for optimization.
+- console interaction, you can choose diyCNN,ResNet etc.
+- the dataset has high complexity and contains noise, curve and other interference information.
+- the project is not yet complete and there are multiple directions for optimization.
