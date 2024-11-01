@@ -1,2 +1,4 @@
 tensorboard
 tqdm
+captcha
+PIL

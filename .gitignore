@@ -1,4 +1,3 @@
-/saved_model
-./saved_model
-./saved_model/*
+saved_model
 dataset
+__pycache__
