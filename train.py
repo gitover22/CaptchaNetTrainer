@@ -73,13 +73,18 @@ def train_model(model_creater,saved_name):
         print("epoch:{}    trainloss:{}".format((epoch + 1), batch_loss/count))
         time.sleep(2)
 
+    # 保存TorchScript模型
+    model.eval()  # 切换模型到评估模式
+    example_input = torch.randn(1, *train_dataloader.dataset[0][0].shape).to(device)  # 假设输入大小与训练数据一致
+    traced_script_module = torch.jit.trace(model, example_input)
+    traced_script_module.save("saved_model/" + saved_name + "_traced.pt")
     # saved
     torch.save(model.state_dict(),  "saved_model/"+saved_name+".pkl")
     print("------------------------------The training is complete and the model is stored------------------------------")
 
 
 if __name__ == '__main__':
-    file_name = input("Please enter the file name to store this training model: (like:cnn_model)")
+    file_name = input("Please enter the file name to store this training model: ")
     model_names = {
         "diyCNN": my_CNN,
         "vgg11": vgg11,

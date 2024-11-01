@@ -27,7 +27,7 @@ def generate_pic(num,path):
         print("number %d saved,file name:%s"%(_+1,file_name))
 if __name__ == '__main__':
     number = input("input number (int):")
-    path = "C:\\Projects\\python_pro\\captcha_recognition\\dataset\\"
+    path = "/raid/home/zouguoqiang/graph_optimizer/src/train/CaptchaNetTrainer/dataset/"
     son_path = input("type (train or test):")
     path+=son_path
     generate_pic(int(number),path)

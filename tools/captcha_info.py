@@ -18,8 +18,8 @@ Char_Set = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
 
 Len_of_charset = len(Char_Set) #  10 or 26 or 36 or 62
 
-Train_Dataset = 'dataset\\train'
-Test_Dataset = 'dataset\\test'
+Train_Dataset = 'dataset/train'
+Test_Dataset = 'dataset/test'
 
 # test
 if __name__ == '__main__':
